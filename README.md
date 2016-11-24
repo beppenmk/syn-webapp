@@ -1,2 +1,7 @@
 # syn-webapp
-syn-webapp
+
+# struttura
+
+# funzioni
+
+# automatismi gulp
