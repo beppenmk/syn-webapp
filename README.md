@@ -1,7 +1,15 @@
 # syn-webapp
+Fork from  [http://fountainjs.io](http://fountainjs.io)
 
-# struttura
+## struttura
+info todo
+## funzioni
+info todo
+## automatismi gulp
+info todo
 
-# funzioni
 
-# automatismi gulp
+###TODO
+* aggiungere i test
+* validare tute le funzionalità dei task (rimuovendo le inutilizate)
+* passare a ts al posto di js
