@@ -1,5 +1,8 @@
 # syn-webapp
 Fork from  [http://fountainjs.io](http://fountainjs.io)
+##Installazione
+* npm install
+* bower install
 
 ## struttura
 info todo
