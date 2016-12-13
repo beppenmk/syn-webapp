@@ -2,11 +2,19 @@
 Fork from  [http://fountainjs.io](http://fountainjs.io)
 
 ## struttura
-info todo
+TODO
+* home -> pubblica
+* post -> privata
+  * ricevo elenco post da https://jsonplaceholder.typicode.com
+* login/registrati
+   * utilizzo firebase 
+   
 ## funzioni
 info todo
 ## automatismi gulp
-info todo
+* eslint  
+    * impostare l'ide con *node_modules/eslint*
+ 
 
 
 ###TODO
