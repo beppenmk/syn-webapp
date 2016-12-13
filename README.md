@@ -4,6 +4,8 @@ Fork from  [http://fountainjs.io](http://fountainjs.io)
 * npm install
 * bower install
 
+  
+ 
 ## struttura
 TODO
 * home -> pubblica
@@ -12,13 +14,10 @@ TODO
 * login/registrati
    * utilizzo firebase 
    
-## funzioni
-info todo
 ## automatismi gulp
-* eslint  
-    * impostare l'ide con *node_modules/eslint*
- 
+info todo
 
+README.md:19
 
 ###TODO
 * blocco login 
