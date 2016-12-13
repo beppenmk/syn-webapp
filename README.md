@@ -1,5 +1,10 @@
 # syn-webapp
 Fork from  [http://fountainjs.io](http://fountainjs.io)
+
+Questo boilerplate racchiude 2 diversi esempi per collegarsi a servizi esterni:
+* chiamate rest ad API generiche (per la sezione post)
+* utilizzo di firebase (per il login e la registrazione utente)
+
 ##Installazione
 * npm install
 * bower install
