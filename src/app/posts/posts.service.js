@@ -9,8 +9,6 @@
       getAll: getAll
     };
     return service;
-
-
     function getAll() {
       var deferred = $q.defer();
       var config = {
@@ -33,6 +31,5 @@
         );
       return deferred.promise;
     }
-
   }
 })();

@@ -22,7 +22,6 @@ TODO
 ## automatismi gulp
 info todo
 
-README.md:19
 
 ###TODO
 * blocco login 

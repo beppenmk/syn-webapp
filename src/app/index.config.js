@@ -22,9 +22,11 @@
   function ConfigService($log, ENV) {
     var CONFIG = {
       DEV: {
+        FIREBASE: "https://quizgame-f1179.firebaseio.com/",
         API: "https://jsonplaceholder.typicode.com"
       },
       PROD: {
+        FIREBASE: "https://quizgame-f1179.firebaseio.com/",
         API: "https://jsonplaceholder.typicode.com"
       }
     };

@@ -10,7 +10,6 @@
     vm.login = login;
     vm.register = register;
 
-
     function login() {
       $log.debug('login');
     }

@@ -4,13 +4,11 @@
   angular
     .module("app")
     .factory("ErrorService", ErrorService);
-  function ErrorService(_, $log ) {
+  function ErrorService(_, $log) {
     var service = {
       normalizeError: normalizeError
     };
     return service;
-
-
     /**
      *
      * @param error
@@ -34,9 +32,5 @@
       $log.error("Errore $http: " + strError);
       return strError;
     }
-
-
-
-
   }
 })();
