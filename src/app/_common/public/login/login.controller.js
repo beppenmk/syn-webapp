@@ -5,21 +5,18 @@
     .module("app")
     .controller("PublicLoginController", PublicLoginController);
 
-  function PublicLoginController($timeout, LoginService, $state, $localStorage) {
+  function PublicLoginController($log, $timeout, LoginService, $state, $localStorage) {
     var vm = this;
-    vm.showPassword = false;
-    vm.typePasswordAvalable = ["password", "text"];
-    vm.errorMessage = "";
-    vm.getPasswordType = getPasswordType;
-    function getPasswordType() {
-      var passwordType = vm.typePasswordAvalable[0];
-      if (vm.showPassword) {
-        passwordType = vm.typePasswordAvalable[1];
-      }
-      return passwordType;
+    vm.login = login;
+    vm.register = register;
+
+
+    function login() {
+      $log.debug('login');
     }
 
-
-
+    function register() {
+      $log.debug('register');
+    }
   }
 })();

@@ -1,54 +1,41 @@
-<div class="grid center">
+<form name="formLogin" class="form-default  form-login">
 
-    <div class="">
-        <form name="formLogin" class="form-default  form-login">
-            <div class="form-group"
-                 ng-class="{'has-error' : (formLogin.loginUsername.$dirty && !formLogin.loginUsername.$valid) || vm.errorMessage}"
-            >
-                <label for="loginUsername" class="control-label">EMAIL</label>
-                <input type="email"
-                       required
-                       id="loginUsername"
-                       name="loginUsername"
-                       placeholder="Inserisci la tua email"
-                       ng-model="vm.login.username"
-                />
-                <span class="bar"></span>
-            </div>
-            <div class="form-group password-container"
-                 ng-class="{'has-error' : (formLogin.loginPassword.$dirty && !formLogin.loginPassword.$valid) || vm.errorMessage }"
-            >
-                <label for="loginPassword" class="control-label">PASSWORD</label>
-                <input type="{{vm.getPasswordType()}}"
-                       id="loginPassword"
-                       name="loginPassword"
-                       ng-model="vm.login.password"
-                       ng-minlength="6"
-                       required
-                       placeholder="Inserisci la tua password"/>
-
-                <i ng-if="!vm.showPassword"
-                   ng-click="vm.showPassword = !vm.showPassword"
-                   class="fa fa-eye" aria-hidden="true"></i>
-                <i ng-if="vm.showPassword"
-                   ng-click="vm.showPassword = !vm.showPassword"
-                   class="fa fa-eye-slash" aria-hidden="true"></i>
-
-                <span class="bar"></span>
-            </div>
-            <div class="error  animate-if"
-                 ng-if="vm.errorMessage"
-                 ng-bind-html="vm.errorMessage"></div>
-            <div class="button-container">
-                <button type="submit"
-                        class="button"
-                        ng-click="vm.login()"
-                        ng-disabled="!formLogin.$valid"
-                        ng-class="{'enable' : formLogin.$valid }"
-                ><span>ACCEDI</span></button>
-            </div>
-        </form>
+    <div class="form-group" >
+        <label for="loginUsername" class="control-label">EMAIL</label>
+        <input type="email"
+               required
+               id="loginUsername"
+               name="loginUsername"
+               placeholder="Inserisci la tua email"
+               ng-model="vm.login.username"
+        />
     </div>
 
+    <div class="form-group password-container"     >
+        <label for="loginPassword" class="control-label">PASSWORD</label>
+        <input type="password"
+               id="loginPassword"
+               name="loginPassword"
+               ng-model="vm.login.password"
+               ng-minlength="6"
+               required
+               placeholder="Inserisci la tua password"/>
+    </div>
 
-</div>
+    <div class="button-container">
+        <button type="button"
+                class="button"
+                ng-click="vm.login()"
+                ng-disabled="!formLogin.$valid"
+                ng-class="{'enable' : formLogin.$valid }"
+        ><span>ACCEDI</span></button>
+    </div>
+    <div class="button-container">
+        <button type="button"
+                class="button"
+                ng-click="vm.register()"
+                ng-disabled="!formLogin.$valid"
+                ng-class="{'enable' : formLogin.$valid }"
+        ><span>REGISTRATI</span></button>
+    </div>
+</form>
