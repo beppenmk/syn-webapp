@@ -11,6 +11,7 @@ const inject = require('gulp-inject');
 const ngAnnotate = require('gulp-ng-annotate');
 const zip = require('gulp-zip');
 const conf = require('../conf/gulp.conf');
+const fs = require('fs');
 
 var bump = require('gulp-bump');
 var injectString = require('gulp-inject-string');
@@ -87,8 +88,11 @@ function build() {
 }
 function createzip() {
   var config = require('../package.json');
+  var timeStamp = Math.floor(Date.now());
   var name = 'dist-' + config.name + '-' + config.version + '.zip';
-
+  if (fs.existsSync('./build/' + name)) {
+    name = 'dist-' + config.name + '-' + config.version + '-' + timeStamp + '.zip';
+  }
   return gulp.src(['dist/**/*', '!maps'])
     .pipe(zip(name))
     .pipe(gulp.dest('./build'));
