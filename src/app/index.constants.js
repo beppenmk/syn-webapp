@@ -12,7 +12,7 @@
         $window.location.hostname === '127.0.0.1' ||
         $window.location.hostname === '127.0.0.1.xip.io' ||
         $window.location.hostname === 'localhost'
-      //  || $window.location.hostname === 'confart.syn.rocks'
+      //  || $window.location.hostname === 'xxx.syn.rocks'
       ) {
         env = 'DEV';
         angular.element('body')

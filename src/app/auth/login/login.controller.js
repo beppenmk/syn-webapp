@@ -5,13 +5,20 @@
     .module("app")
     .controller("PublicLoginController", PublicLoginController);
 
-  function PublicLoginController($log, $timeout, LoginService, $state, $localStorage) {
+  function PublicLoginController($log, FirebaseService) {
     var vm = this;
     vm.login = login;
     vm.register = register;
 
     function login() {
-      $log.debug('login');
+      var data = {
+        email: vm.login.username,
+        password: vm.login.password
+      };
+
+      $log.debug(data);
+      FirebaseService.login(data)
+      //
     }
 
     function register() {

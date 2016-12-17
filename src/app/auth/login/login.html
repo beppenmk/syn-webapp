@@ -21,13 +21,15 @@
                required
                placeholder="Inserisci la tua password"/>
     </div>
-
+<!--
+ ng-disabled="!formLogin.$valid"
+                 ng-class="{'enable' : formLogin.$valid }"
+-->
     <div class="button-container">
         <button type="button"
                 class="button"
                 ng-click="vm.login()"
-                ng-disabled="!formLogin.$valid"
-                ng-class="{'enable' : formLogin.$valid }"
+
         ><span>ACCEDI</span></button>
     </div>
     <div class="button-container">
