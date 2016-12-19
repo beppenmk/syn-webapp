@@ -4,19 +4,39 @@
   angular
     .module("app")
     .factory("LoginService", LoginService);
-  function LoginService($q, $http, CONFIG) {
+  function LoginService($log, $q, $http, CONFIG, FirebaseService) {
     var service = {
       login: login,
-      register: register
+      isLogged: isLogged,
+      getUserLogged: getUserLogged,
+
     };
     return service;
 
-    function login(username, password) {
+
+    /**
+     * @param data
+     * wrapper di FirebaseService
+     */
+    function login(data) {
+      var deferred = $q.defer();
+      FirebaseService.login(data).then(function (user) {
+        deferred.resolve(user);
+      }, function (error) {
+        deferred.reject(error);
+      });
+      return deferred.promise;
+
 
     }
 
-    function register(user) {
+    function isLogged() {
+      $log.debug('LoginService->'+FirebaseService.isLogged());
+      return FirebaseService.isLogged();
+    }
 
+    function getUserLogged() {
+      return FirebaseService.getUserLogged();
     }
   }
 })();

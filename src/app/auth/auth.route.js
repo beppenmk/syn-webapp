@@ -12,24 +12,27 @@
         url: "/public/login",
         templateUrl: "app/auth/login/login.html",
         controller: "PublicLoginController",
-        controllerAs: "vm"
+        controllerAs: "vm",
+        params: {
+          errorMessage:''
+        }
       })
       .state("logged", {
-        url: "/logged",
+        url: "",
         template: "<ui-view ></ui-view>",
         resolve: {
-          checkLogged: function ($log, $location, $q, $state, $localStorage, $timeout) {
-            var deferred = $q.defer();
-            // verifico lo stato logged, in caso negativo redirect allo   state 'home'
+          checkLogged: function ($log,$timeout, $state, LoginService) {
             $timeout(function () {
-              if (true) {
-                deferred.resolve();
+              if (!LoginService.isLogged()) {
+                $log.debug('non loggato');
+                $state.go('login',{errorMessage:'Per accedere devi prima effettuare il login'});
+                return false;
               } else {
-                $state.go('home');
-                deferred.reject();
+                $log.debug('Loggato');
+                return true;
               }
-            }, 0);
-            return deferred.promise;
+            }, 0)
+
           }
         }
       })

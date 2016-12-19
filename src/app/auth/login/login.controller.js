@@ -5,10 +5,10 @@
     .module("app")
     .controller("PublicLoginController", PublicLoginController);
 
-  function PublicLoginController($log, FirebaseService) {
+  function PublicLoginController($log, $state, $stateParams, LoginService) {
     var vm = this;
+    vm.errorMessage = $stateParams.errorMessage;
     vm.login = login;
-    vm.register = register;
 
     function login() {
       var data = {
@@ -16,13 +16,17 @@
         password: vm.login.password
       };
 
-      $log.debug(data);
-      FirebaseService.login(data)
+      LoginService.login(data).then(
+        function (data) {
+          $log.debug(data);
+          $state.go('logged.questions.list', {});
+        }, function (error) {
+          $log.error(error);
+          vm.errorMessage = error.message;
+        });
       //
     }
 
-    function register() {
-      $log.debug('register');
-    }
+
   }
 })();
