@@ -15,7 +15,7 @@ Successivamente in questo file verranno elencati gli altri task di gulp.
 
 ###NOTE
 Per utilizzare [Firebase](https://firebase.google.com/) in angular 1.x si utilizza la libreria [angularfire](https://github.com/firebase/angularfire).
-Leggere la [documentazione per la versione 2.xx](https://github.com/firebase/angularfire/blob/master/docs/migration/1XX-to-2XX.md)
+Leggere la [documentazione per la versione 2.xx](https://github.com/firebase/angularfire/blob/master/docs/reference.md) ed il [change log ](https://github.com/firebase/angularfire/blob/master/docs/migration/1XX-to-2XX.md)
  
 La configurazione deve essere inserita direttamente in index.html ( o un file esterno) ma è fondamentale che vada aggiunta dopo il file js compilato da gulp.
 ```
