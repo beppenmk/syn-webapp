@@ -21,18 +21,10 @@
         url: "",
         template: "<ui-view ></ui-view>",
         resolve: {
-          checkLogged: function ($log,$timeout, $state, LoginService) {
-            $timeout(function () {
-              if (!LoginService.isLogged()) {
-                $log.debug('non loggato');
-                $state.go('login',{errorMessage:'Per accedere devi prima effettuare il login'});
-                return false;
-              } else {
-                $log.debug('Loggato');
-                return true;
-              }
-            }, 0)
-
+          checkLogged: function ($firebaseAuthService) {
+            // in caso di errore viene eseguito
+            // $stateChangeError
+            return $firebaseAuthService.$requireSignIn();
           }
         }
       })
